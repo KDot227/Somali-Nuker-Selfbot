@@ -1,0 +1,6 @@
+colorama
+discord.py
+pystyle
+requests
+hmtai
+discord.py-self
