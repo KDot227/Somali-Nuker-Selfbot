@@ -4,3 +4,4 @@ pystyle
 requests
 hmtai
 discord.py-self
+colorama
