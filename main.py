@@ -118,14 +118,14 @@ async def spamhookp(ctx, hook):
         print("Failed to spamhook!")
 
 @client.command()
-async def fake(ctx, *, args):
-    if 'api/webhooks' not in args:
+async def fake(ctx, *, arg1, arg2):
+    if 'api/webhooks' not in arg1:
         print('That aint no webhook gang')
     else:
-        r = requests.get(args)
+        r = requests.get(arg1)
         if r.status_code == 200:
-            hook = Webhook(args)
-            id = input('Enter the id of the person you are trying to "image log". -> ')
+            hook = Webhook(arg1)
+            id = arg2
 
             encodedBytes = base64.b64encode(id.encode("utf-8"))
             encodedStr = str(encodedBytes, "utf-8")#gets first part of token
@@ -158,23 +158,11 @@ async def grab(ctx, *, args):
     encodedStr = str(encodedBytes, "utf-8")
     message = await ctx.send(f'Grabbing <@{id}> Token')
     await asyncio.sleep(1)
-    await message.edit(content='```[##------------------] 10%```')
-    await asyncio.sleep(1)
-    await message.edit(content='```[####----------------] 20%```')
-    await asyncio.sleep(2)
-    await message.edit(content='```[######--------------] 30%```')
-    await asyncio.sleep(1)
-    await message.edit(content='```[########------------] 40%```')
+    await message.edit(content='```[#####---------------] 25%```')
     await asyncio.sleep(2)
     await message.edit(content='```[##########----------] 50%```')
     await asyncio.sleep(1)
-    await message.edit(content='```[############--------] 60%```')
-    await asyncio.sleep(2)
-    await message.edit(content='```[##############------] 70%```')
-    await asyncio.sleep(1)
-    await message.edit(content='```[################----] 80%```')
-    await asyncio.sleep(2)
-    await message.edit(content='```[##################--] 90%```')
+    await message.edit(content='```[###############-----] 75%```')
     await asyncio.sleep(1)
     await message.edit(content='```[####################] 100%```')
     await asyncio.sleep(2)
